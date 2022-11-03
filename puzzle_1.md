@@ -12,6 +12,8 @@
         08      5B      JUMPDEST
         09      00      STOP
 
+## About the puzzle
+
 Our goal is to complete a successful transaction.  The first instruction we see is CALLVALUE (34).  This instruction takes the call value of the transaction responsible for execution and pushes it onto the stack. This is the value we will be passing in to transaction.
 
 If you noticed, there are multiple REVERT statements.  If we reference [evm.codes](https://www.evm.codes) we can see that REVERT (FD) halts execution, reverting state changes.  We need to use JUMP and JUMPDEST to avoid REVERT instructions.  
@@ -20,12 +22,12 @@ JUMP (56) takes a counter from the stack and uses this as a byte offset to jump 
 
 Following the logic above, we can enter the value 08. Now let's follow the stack.
 
-## 1. CALLVALUE
+### 1. CALLVALUE
 
 The value 8 is passed in to the transaction and placed on the stack by CALLVALUE.
 
     Location  Bytecode  Opcode name    
-        00      34      CALLVALUE  <--- (8 is sent as value)
+        00      34      CALLVALUE  <---
         01      56      JUMP
         02      FD      REVERT
         03      FD      REVERT
@@ -39,7 +41,7 @@ The value 8 is passed in to the transaction and placed on the stack by CALLVALUE
     Current Stack:
     Empty
 
-## 2. JUMP
+### 2. JUMP
 
 JUMP takes input from the stack as a location to jump to. In this case it takes 8 from the stack and jumps to that location.
 
@@ -58,7 +60,7 @@ JUMP takes input from the stack as a location to jump to. In this case it takes 
     Current Stack:
     8
 
-## 3. JUMPDEST
+### 3. JUMPDEST
 
 JUMP and the value from the stack take us to JUMPDEST at location 08 (9th byte in the code, we start counting from 00).
 
@@ -77,7 +79,7 @@ JUMP and the value from the stack take us to JUMPDEST at location 08 (9th byte i
     Current Stack:
     Empty
 
-## 4. STOP
+### 4. STOP
 
 After JUMPDEST, the PC increments by 1 and we get moved to the next instruction, STOP (00).  This halts execution and solves the puzzle!
 
