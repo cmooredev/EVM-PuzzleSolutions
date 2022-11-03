@@ -14,7 +14,7 @@
 
 Our goal is to complete a successful transaction.  The first instruction we see is CALLVALUE (34).  This instruction takes the deposited value by the transaction responsible for execution and pushes it onto the stack. This is the value we will be passing to the transaction.
 
-If you noticed, there are multiple REVERT statements.  If we reference evm.codes we can see that REVERT (FD) halts execution, reverting state changes.  We need to use JUMP and JUMPDEST to avoid REVERT instructions.  
+If you noticed, there are multiple REVERT statements.  If we reference [evm.codes](https://www.evm.codes) we can see that REVERT (FD) halts execution, reverting state changes.  We need to use JUMP and JUMPDEST to avoid REVERT instructions.  
 
 JUMP (56) takes a counter from the stack and uses this as a byte offset to jump locations. By definition, its destination must be a JUMPDEST (5B) instruction.  Each instruction (besides PUSH opcodes, we will explore later) takes up 1 byte.  In the problem above, we can see we have a JUMP instruction at location 01 and a JUMPDEST instruction at 08. We need to provide a value to JUMP that will move us to location 08.
 
