@@ -12,7 +12,7 @@
         08      5B      JUMPDEST
         09      00      STOP
 
-Our goal is to complete a successful transaction.  The first instruction we see is CALLVALUE (34).  This instruction takes the value deposited by transaction responsible for execution and pushes it onto the stack. This is the value we will be passing to the transaction.
+Our goal is to complete a successful transaction.  The first instruction we see is CALLVALUE (34).  This instruction takes the call value of the transaction responsible for execution and pushes it onto the stack. This is the value we will be passing in to transaction.
 
 If you noticed, there are multiple REVERT statements.  If we reference [evm.codes](https://www.evm.codes) we can see that REVERT (FD) halts execution, reverting state changes.  We need to use JUMP and JUMPDEST to avoid REVERT instructions.  
 
