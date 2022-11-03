@@ -25,7 +25,7 @@ Following the logic above, we can enter the value 08. Now let's follow the stack
 The value 8 is passed in to the transaction and placed on the stack by CALLVALUE.
 
     Location  Bytecode  Opcode name    
-        00      34      CALLVALUE  <---
+        00      34      CALLVALUE  <--- (8 is sent as value)
         01      56      JUMP
         02      FD      REVERT
         03      FD      REVERT
