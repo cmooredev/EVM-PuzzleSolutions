@@ -72,7 +72,10 @@ CODESIZE gets the size of the code running in the current environment, in this c
 
 ### 3. SUB
 
-SUB pops the top two values from the stack and pushes the difference.  Since the stack follows Last in First out, the top value on the current stack should be 0xA (from CODESIZE), and the value below should be 4 (from CALLVALUE). 0xA - 4 = 6
+SUB pops the top two values from the stack and pushes the difference.  Since the stack follows Last in First out, the top value on the current stack should be 0xA (from CODESIZE), and the value below should be 4 (from CALLVALUE).
+
+0xA - 4 = 6
+
 0xA is 10 in decimal so this is 10 - 4 = 6. The value 6 will be pushed to the stack.
 
     Location  Bytecode  Opcode name    
