@@ -68,7 +68,7 @@ CODESIZE gets the size of the code running in the current environment, in this c
         09      FD      REVERT
 
     Current Stack:
-    8
+    4
 
 ### 3. SUB
 
@@ -89,7 +89,7 @@ SUB pops the top two values from the stack and pushes the difference.  Since the
 
     Current Stack:
     0xA ---> 10 in decimal
-    8
+    4
 
 ### 4. JUMP
 
