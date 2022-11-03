@@ -20,7 +20,7 @@ If you noticed, there are multiple REVERT statements.  If we reference [evm.code
 
 JUMP (56) takes a counter from the stack and uses this as a byte offset to jump locations. By definition, its destination must be a JUMPDEST (5B) instruction.  Each instruction (besides PUSH opcodes, we will explore later) takes up 1 byte.  In the problem above, we can see we have a JUMP instruction at location 01 and a JUMPDEST instruction at 08. We need to provide a value to JUMP that will move us to location 08.
 
-Following the logic above, we can enter the value 08. Now let's follow the stack.
+Based on the logic above, we enter the value 08. Now let's follow the stack.
 
 ### 1. CALLVALUE
 
@@ -97,3 +97,7 @@ After JUMPDEST, the PC increments by 1 and we get moved to the next instruction,
 
     Current Stack:
     Empty
+
+## Solved
+
+Congratulations!  We have solved the first puzzle. 
