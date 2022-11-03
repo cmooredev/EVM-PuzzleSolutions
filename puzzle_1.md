@@ -22,7 +22,7 @@ Following the logic above, we can enter the value 08. Now let's follow the stack
 
 ## 1. CALLVALUE
 
-THe value 8 is passed in to the transaction and placed on the stack by CALLVALUE.
+The value 8 is passed in to the transaction and placed on the stack by CALLVALUE.
 
     Location  Bytecode  Opcode name    
         00      34      CALLVALUE  <---
@@ -36,8 +36,8 @@ THe value 8 is passed in to the transaction and placed on the stack by CALLVALUE
         08      5B      JUMPDEST
         09      00      STOP
 
-    Stack:
-    8
+    Current Stack:
+    Empty
 
 ## 2. JUMP
 
@@ -55,8 +55,8 @@ JUMP takes input from the stack as a location to jump to. In this case it takes 
         08      5B      JUMPDEST
         09      00      STOP
 
-    Stack:
-    Empty
+    Current Stack:
+    8
 
 ## 3. JUMPDEST
 
@@ -74,7 +74,7 @@ JUMP and the value from the stack take us to JUMPDEST at location 08 (9th byte i
         08      5B      JUMPDEST   <---
         09      00      STOP
 
-    Stack:
+    Current Stack:
     Empty
 
 ## 4. STOP
@@ -90,8 +90,8 @@ After JUMPDEST, the PC increments by 1 and we get moved to the next instruction,
         05      FD      REVERT
         06      FD      REVERT
         07      FD      REVERT
-        08      5B      JUMPDEST 
+        08      5B      JUMPDEST
         09      00      STOP       <---
 
-    Stack:
+    Current Stack:
     Empty
