@@ -9,3 +9,6 @@ A repo containing my solutions to [fvictorio's evm puzzles](https://github.com/f
 
 ## Puzzle 2
 [Solution - Puzzle 2](https://github.com/cmooredev/EVM-PuzzleSolutions/blob/main/puzzle_2.md)
+
+## Puzzle 3
+[Solution - Puzzle 3](https://github.com/cmooredev/EVM-PuzzleSolutions/blob/main/puzzle_3.md)
