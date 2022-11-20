@@ -1,12 +1,12 @@
 # Puzzle 3
 
-  Location  Bytecode  Opcode name  
-      00      36      CALLDATASIZE
-      01      56      JUMP
-      02      FD      REVERT
-      03      FD      REVERT
-      04      5B      JUMPDEST
-      05      00      STOP  
+    Location  Bytecode  Opcode name  
+        00      36      CALLDATASIZE
+        01      56      JUMP
+        02      FD      REVERT
+        03      FD      REVERT
+        04      5B      JUMPDEST
+        05      00      STOP  
 
 ## About the puzzle
 
@@ -21,6 +21,7 @@ We need to pass in a value that is 4 bytes. We will use 0x00000000.  Remember th
 ### 1. CALLDATASIZE
 
 The value 0x00000000 is passed in to the transaction.  CALLDATASIZE gets the size of the calldata (in bytes) and places it on the stack.  The value we passed in has a size of 4 bytes.
+
     Location  Bytecode  Opcode name  
         00      36      CALLDATASIZE <--- Pass in 0x00000000 as calldata
         01      56      JUMP
